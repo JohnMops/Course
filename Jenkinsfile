@@ -15,7 +15,7 @@ pipeline {
             steps {
                 script {
                    sh label: '', script: 'echo Hello World > lidor.txt'
-		   cat lidor.txt'''
+		   sh label: '', script: 'cat lidor.txt'
                 }
             }
         }
