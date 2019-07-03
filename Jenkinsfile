@@ -13,9 +13,14 @@ pipeline {
         }
         stage('shell command example') {
             steps {
-                script {
-                   sh label: '', script: 'echo Hello World > lidor.txt'
-		   sh label: '', script: 'cat lidor.txt'
+                script{
+                   sh label: '', script: '''git checkout Lidor
+		   echo Lidor Abo > lidorabo.txt
+		   git add .
+                   git commit -m "pushing to git"
+                   git push origin Lidor
+                   '''
+			
                 }
             }
         }
