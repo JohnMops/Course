@@ -14,9 +14,8 @@ pipeline {
         stage('shell command example') {
             steps {
                 script {
-                    ls_command = sh script: 'pwd', returnStdout: true
-                    print(ls_command)
-                    sh '''echo "ls_command is ${ls_command}" > variable'''
+                   sh label: '', script: 'echo Hello World > lidor.txt'
+		   cat lidor.txt'''
                 }
             }
         }
